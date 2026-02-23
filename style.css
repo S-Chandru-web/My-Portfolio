@@ -107,16 +107,17 @@ nav {
     left: 0;
     right: 0;
     z-index: 200;
-    background: rgba(12, 12, 12, 0.5);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    transition: background .35s
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav.scrolled {
-    background: rgba(10, 10, 10, 0.92);
-    box-shadow: 0 4px 40px rgba(0, 0, 0, .5)
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid rgba(201, 255, 71, 0.08);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, .6), 0 1px 0 rgba(201, 255, 71, 0.05);
 }
 
 .nav-inner {
@@ -159,9 +160,9 @@ nav.scrolled {
     font-weight: 500;
     color: var(--muted);
     text-decoration: none;
-    transition: color .2s;
+    transition: color 0.3s ease;
     position: relative;
-    padding-bottom: 2px
+    padding-bottom: 4px;
 }
 
 .nav-links li a::after {
@@ -170,20 +171,23 @@ nav.scrolled {
     left: 0;
     bottom: -2px;
     width: 0;
-    height: 1.5px;
+    height: 2px;
     background: var(--lime);
     border-radius: 2px;
-    transition: width .25s
+    transition: width 0.3s ease;
 }
 
-.nav-links li a:hover,
+.nav-links li a:hover {
+    color: var(--white);
+}
+
 .nav-links li a.active {
-    color: var(--white)
+    color: var(--lime);
 }
 
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
-    width: 100%
+    width: 100%;
 }
 
 .nav-cta {
@@ -345,10 +349,58 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     position: relative;
     overflow: hidden;
     padding-top: 90px
+}
+
+.h-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 10;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-right: 60px;
+    line-height: 1.6;
+}
+
+.h-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    order: 1;
+}
+
+.h-image-wrap {
+    flex-shrink: 0;
+    width: 340px;
+    height: 340px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+    background: var(--bg);
+    transition: transform 0.3s ease;
+}
+
+.h-image-wrap:hover {
+    transform: scale(1.05);
+}
+
+.h-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%) contrast(1.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .h-bg {
@@ -371,18 +423,30 @@ section {
     margin-bottom: 32px;
     animation: fu .8s .12s both;
     width: 100%;
-    text-align: center
+}
+
+.h-intro {
+    font-family: var(--B);
+    font-size: clamp(15px, 1.8vw, 20px);
+    font-weight: 500;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: .04em;
+}
+
+.h-intro .acc {
+    color: var(--lime);
 }
 
 
 .h-name {
     font-family: var(--D);
-    font-size: clamp(52px, 9vw, 130px);
+    font-size: clamp(52px, 8vw, 110px);
     color: var(--white);
     display: block;
     letter-spacing: .02em;
     line-height: .9;
-    text-align: center;
     width: 100%
 }
 
@@ -392,12 +456,11 @@ section {
 
 .h-role {
     font-family: var(--B);
-    font-size: clamp(20px, 2.8vw, 38px);
+    font-size: clamp(20px, 2.8vw, 32px);
     font-weight: 700;
     color: var(--white);
     display: block;
     margin-top: 18px;
-    text-align: center;
     width: 100%
 }
 
@@ -408,19 +471,18 @@ section {
 .h-bottom {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 24px;
     animation: fu .7s .32s both;
     width: 100%
 }
 
 .h-desc {
-    max-width: 580px;
+    max-width: 540px;
     font-family: var(--B);
     font-size: 16px;
     line-height: 1.82;
     color: var(--muted);
-    text-align: center
 }
 
 .h-actions {
@@ -428,7 +490,7 @@ section {
     gap: 10px;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: center
+    justify-content: flex-start
 }
 
 .btn-p {
@@ -443,15 +505,16 @@ section {
     padding: 13px 26px;
     border-radius: 999px;
     text-decoration: none;
-    transition: opacity .2s, transform .2s;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 8px
 }
 
 .btn-p:hover {
-    opacity: .85;
-    transform: translateY(-2px)
+    opacity: .9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(201, 255, 71, 0.35)
 }
 
 .btn-o {
@@ -462,11 +525,11 @@ section {
     text-transform: uppercase;
     color: var(--muted);
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, .14);
+    border: 1.5px solid rgba(255, 255, 255, .22);
     padding: 12px 22px;
     border-radius: 999px;
     text-decoration: none;
-    transition: border-color .2s, color .2s, transform .2s;
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 8px
@@ -475,7 +538,8 @@ section {
 .btn-o:hover {
     border-color: var(--lime);
     color: var(--lime);
-    transform: translateY(-2px)
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(201, 255, 71, 0.12)
 }
 
 .btn-icon {
@@ -1172,18 +1236,93 @@ footer {
 
     #hero {
         padding-top: 90px;
-        padding-left: 24px;
-        padding-right: 24px;
-        min-height: auto;
-        padding-bottom: 60px
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 100svh;
+        padding-bottom: 60px;
+        justify-content: center;
+    }
+
+    .h-main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        margin-top: 20px;
+        margin-bottom: 16px;
+        padding-right: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Text content FIRST on mobile */
+    .h-content {
+        order: 1;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Image goes BELOW text on mobile */
+    .h-image-wrap {
+        order: 2;
+        width: 200px;
+        height: 200px;
+    }
+
+    .h-image-wrap::before {
+        inset: -8px;
+    }
+
+    .h-image-wrap::after {
+        inset: -5px;
+    }
+
+    .h-title {
+        text-align: center;
+    }
+
+    .h-intro {
+        text-align: center;
+    }
+
+    .h-bottom {
+        align-items: center;
+        width: 100%;
+    }
+
+    .h-desc {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    /* Buttons stack vertically on mobile */
+    .h-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .h-actions .btn-p,
+    .h-actions .btn-o {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Keep icon-only buttons as a row */
+    .h-actions .btn-icon {
+        width: auto;
+        align-self: center;
     }
 
     .h-name {
-        font-size: clamp(46px, 13vw, 90px)
+        font-size: clamp(40px, 12vw, 70px)
     }
 
     .h-role {
-        font-size: clamp(18px, 5vw, 28px)
+        font-size: clamp(18px, 5vw, 24px)
     }
 
     .about-grid {

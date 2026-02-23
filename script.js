@@ -16,12 +16,12 @@ const mqItems = ['MongoDB',
     'Postman'];
 
 const skillCats = [{
-    label: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'React']
+    label: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js']
 }
 
     ,
 {
-    label: 'Backend', items: ['Node.js', 'Express.js', 'REST API Design', 'Socket.io', 'JWT Auth']
+    label: 'Backend', items: ['Node.js', 'Express.js', 'REST API Design', 'Socket.io', 'JWT Auth', 'MVC']
 }
 
     ,
@@ -31,24 +31,24 @@ const skillCats = [{
 
     ,
 {
-    label: 'Tools & DevOps', items: ['Git & GitHub', 'GitLab', 'Netlify / Vercel', 'Postman', 'VS Code']
+    label: 'Tools & DevOps', items: ['Git & GitHub', 'GitLab', 'Netlify / Vercel', 'Postman', 'VS Code', 'Docker', 'AWS']
 }
 
     ,
 ];
 
 const projects = [{
-    num: '01', title: 'NETFLIX CLONE', desc: 'Dynamic movie streaming UI built with React. Integrated external APIs to fetch real-time movie data, with routing, state management, and clean component architecture.', tags: ['React', 'API Integration', 'React Router', 'State Management'], gh: 'https://github.com/S-Chandru-web', live: 'https://effulgent-gaufre-587ac7.netlify.app/'
+    num: '01', title: 'NETFLIX CLONE', desc: 'Dynamic movie streaming UI built with React. Integrated external APIs to fetch real-time movie data, with routing, state management, and clean component architecture.', tags: ['React', 'Node.js', 'TMDB', 'React Slick', 'MongoDB'], gh: 'https://github.com/S-Chandru-web', live: 'https://effulgent-gaufre-587ac7.netlify.app/'
 }
 
     ,
 {
-    num: '02', title: 'WEATHER APPLICATION', desc: 'Responsive weather app using the OpenWeather API. Search any city to view temperature, humidity, wind speed, and conditions with full error handling.', tags: ['React', 'OpenWeather API', 'State Management', 'Responsive UI'], gh: 'https://github.com/S-Chandru-web', live: 'https://helpful-nasturtium-706c1d.netlify.app'
+    num: '02', title: 'WEATHER APPLICATION', desc: 'Responsive weather app using the OpenWeather API. Search any city to view temperature, humidity, wind speed, and conditions with full error handling.', tags: ['React', 'Node.js', 'Express', 'External API', 'MongoDB'], gh: 'https://github.com/S-Chandru-web', live: 'https://helpful-nasturtium-706c1d.netlify.app'
 }
 
     ,
 {
-    num: '03', title: 'REAL-TIME CHAT APP', desc: 'Full-stack MERN chat application with instant messaging via Socket.io bidirectional communication, user authentication, and real-time message broadcasting.', tags: ['React', 'Node.js', 'Express', 'Socket.io', 'MongoDB'], gh: 'https://github.com/S-Chandru-web', live: 'https://effervescent-gelato-7524f3.netlify.app/'
+    num: '03', title: 'REAL-TIME CHAT APP', desc: 'Full-stack MERN chat application with instant messaging via Socket.io bidirectional communication, user authentication, and real-time message broadcasting.', tags: ['React', 'Node.js', 'Express', 'Socket.IO', 'JWT'], gh: 'https://github.com/S-Chandru-web', live: 'https://effervescent-gelato-7524f3.netlify.app/'
 }
 
     ,
@@ -60,12 +60,12 @@ const projects = [{
 ];
 
 const experience = [{
-    period: '2026 - present', type: 'work', role: 'MERN STACK FULL-STACK TRAINEE', co: 'Veloxity Tech — Hybrid', pts: ['Working as a MERN Stack Trainee contributing to full-stack web application development.', 'Developing responsive frontend applications using React and integrating RESTful APIs.', 'Building and maintaining backend services using Node.js, Express, and MongoDB.', 'Deploying and managing applications on AWS (EC2 / S3 / basic cloud setup).', 'Collaborating with team members for API coordination, debugging, and performance improvements.']
+    period: '01 Feb 2026 - Present', type: 'work', role: 'MERN STACK FULL-STACK TRAINEE', co: 'Veloxity Tech — Hybrid', pts: ['Working as a MERN Stack Trainee contributing to full-stack web application development.', 'Developing responsive frontend applications using React and integrating RESTful APIs.', 'Building and maintaining backend services using Node.js, Express, and MongoDB.', 'Deploying and managing applications on AWS (EC2 / S3 / basic cloud setup).', 'Collaborating with team members for API coordination, debugging, and performance improvements.']
 }
 
     ,
 {
-    period: 'Jan 2026 – Feb 2026', type: 'work', role: 'MERN STACK WEB DEV INTERN', co: 'Codtech IT Solutions Pvt. Ltd. — Remote', pts: ['Completed a structured 4-week internship focused on MERN Stack Web Development.', 'Worked on full-stack projects involving React, Node.js, Express, and MongoDB.', 'Developed and tested RESTful APIs and integrated them with frontend applications.', 'Participated in team discussions, received mentor feedback, and improved code quality.', 'Gained hands-on experience in real-world project development and deployment.']
+    period: '01 Jan 2026 - 30 Jan 2026', type: 'work', role: 'MERN STACK WEB DEV INTERN', co: 'Codtech IT Solutions Pvt. Ltd. — Remote', pts: ['Completed a structured 4-week internship focused on MERN Stack Web Development.', 'Worked on full-stack projects involving React, Node.js, Express, and MongoDB.', 'Developed and tested RESTful APIs and integrated them with frontend applications.', 'Participated in team discussions, received mentor feedback, and improved code quality.', 'Gained hands-on experience in real-world project development and deployment.']
 }
 
     ,
@@ -144,7 +144,7 @@ window.addEventListener('scroll', () => {
     });
 
     navAs.forEach(a => {
-        const t = a.getAttribute('href').replace('#', ''); a.classList.toggle('active', t === cur2 || (t === 'tech-skills' && cur2 === 'about'))
+        const t = a.getAttribute('href').replace('#', ''); a.classList.toggle('active', t === cur2)
     });
 }
 
