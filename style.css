@@ -388,6 +388,9 @@ section {
     order: 2;
     background: var(--bg);
     transition: transform 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .h-image-wrap:hover {
@@ -399,8 +402,8 @@ section {
     height: 100%;
     object-fit: cover;
     filter: grayscale(20%) contrast(1.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    transform: scale(1.08);
+    transform-origin: top left;
 }
 
 .h-bg {
