@@ -325,7 +325,7 @@ section {
     transition: opacity .7s ease, transform .7s ease
 }
 
-.reveal.hidden {
+.reveal.reveal-hidden {
     opacity: 0;
     transform: translateY(36px)
 }
@@ -797,6 +797,218 @@ section {
     background: var(--surface)
 }
 
+
+/* UTILITIES */
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.max-w-\[1200px\] {
+    max-width: 1200px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-3 {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.max-w-3xl {
+    max-width: 48rem;
+}
+
+.max-w-4xl {
+    max-width: 56rem;
+}
+
+.max-w-xl {
+    max-width: 36rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.leading-tight {
+    line-height: 1.25;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.space-y-4>*+* {
+    margin-top: 1rem;
+}
+
+.space-y-6>*+* {
+    margin-top: 1.5rem;
+}
+
+.min-h-\[140px\] {
+    min-height: 140px;
+}
+
+.min-h-\[160px\] {
+    min-height: 160px;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .sm\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .sm\:flex-row {
+        flex-direction: row;
+    }
+
+    .sm\:w-auto {
+        width: auto;
+    }
+
+    .sm\:text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:px-12 {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .md\:flex-row {
+        flex-direction: row;
+    }
+
+    .md\:text-left {
+        text-align: left;
+    }
+
+    .md\:block {
+        display: block;
+    }
+
+    .md\:mx-0 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .md\:justify-start {
+        justify-content: flex-start;
+    }
+
+    .md\:text-6xl {
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+
+    .md\:flex {
+        display: flex;
+    }
+
+    .md\:hidden {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 .sk-tag {
     font-family: var(--B);
     font-size: 12px;
@@ -806,7 +1018,8 @@ section {
     border: 1px solid rgba(255, 255, 255, .08);
     padding: 5px 13px;
     border-radius: 5px;
-    transition: border-color .2s, color .2s
+    transition: border-color .2s,
+        color .2s
 }
 
 .sk-tag:hover {
@@ -1020,12 +1233,6 @@ section {
 }
 
 /* CONTACT */
-#contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    align-items: start
-}
 
 .c-tagline {
     font-family: var(--B);
@@ -1033,7 +1240,6 @@ section {
     line-height: 1.82;
     color: var(--muted);
     margin-bottom: 34px;
-    max-width: 340px
 }
 
 .c-det {
@@ -1161,7 +1367,6 @@ section {
     border-radius: 999px;
     cursor: none;
     transition: opacity .2s, transform .2s;
-    align-self: flex-start;
     display: flex;
     align-items: center;
     gap: 8px
@@ -1353,12 +1558,6 @@ footer {
         grid-template-columns: 1fr;
         gap: 10px;
         padding: 20px 18px
-    }
-
-    #contact {
-        grid-template-columns: 1fr;
-        gap: 44px;
-        padding: 80px 24px
     }
 
     .f-row {

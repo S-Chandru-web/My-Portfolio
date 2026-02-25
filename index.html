@@ -12,14 +12,14 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
+    <body class="overflow-x-hidden">
         <div id="cur"></div>
         <div id="cur-r"></div>
         <nav id="main-nav">
             <div class="nav-inner"><a href="#hero" class="nav-logo"><span class="br">&lt;
                     </span>Chandru<span class="sl">/</span><span class="br">&gt;
                     </span></a>
-                <ul class="nav-links">
+                <ul class="nav-links hidden md:flex">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#tech-skills">Skills</a></li>
@@ -30,16 +30,17 @@
                             width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" stroke-linecap="round">
                             <path d="M7 17L17 7M17 7H7M17 7v10" />
-                        </svg></a><button class="mob-btn" id="mob-btn"><span></span><span></span><span></span></button>
+                        </svg></a><button class="mob-btn md:hidden"
+                        id="mob-btn"><span></span><span></span><span></span></button>
                 </div>
             </div>
         </nav>
         <div class="mob-nav" id="mob-nav"><a href="#hero">Home</a><a href="#about">About</a><a
                 href="#tech-skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
-        <section id="hero">
+        <section id="hero" class="flex flex-col md:flex-row items-center text-center md:text-left gap-6">
             <div class="h-bg"></div>
             <div class="h-grid"></div>
-            <div class="h-main">
+            <div class="h-main px-4 sm:px-6 md:px-12">
                 <div class="h-content">
                     <div class="h-title"><span class="h-intro">Hi, I'm</span><span class="h-name">CHANDRU <span
                                 class="acc">S</span></span><span class="h-role">MERN Full Stack Developer</span></div>
@@ -75,85 +76,108 @@
             <div class="mq-track" id="mq-el"></div>
         </div>
         <section id="about">
-            <div class="s-tag reveal">About</div>
-            <h2 class="s-title reveal rd1">WHO I<br><span class="dim">AM &amp;</span><br>WHAT I DO</h2>
-            <div class="about-text reveal rd2">
-                <p>I'm Chandru S, a MERN Stack Web Developer and Electronics and Communication Engineering Student
-                    who enjoys building modern, scalable web applications.</p>
-                <p>I focus on creating clean user interfaces, efficient backend APIs, and real-world solutions using
-                    JavaScript, React, Node.js, Express, and MongoDB.</p>
-                <div class="avail-badge">
-                    <div class="avail-dot"></div>Available for new projects
+            <div class="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12">
+                <div class="s-tag reveal">About</div>
+                <h2 class="s-title reveal rd1">WHO I<br><span class="dim">AM &amp;</span><br>WHAT I DO</h2>
+                <div class="about-text reveal rd2">
+                    <p>I'm Chandru S, a MERN Stack Web Developer and Electronics and Communication Engineering Student
+                        who enjoys building modern, scalable web applications.</p>
+                    <p>I focus on creating clean user interfaces, efficient backend APIs, and real-world solutions using
+                        JavaScript, React, Node.js, Express, and MongoDB.</p>
+                    <div class="avail-badge">
+                        <div class="avail-dot"></div>Available for new projects
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="tech-skills">
-            <!-- The content is injected by JS into #sk-block -->
-            <!-- We need a container for it. The original used .skills-block -->
-            <!-- JS targets 'sk-block' innerHTML. -->
-            <div class="skills-block reveal rd3">
-                <div id="sk-block"></div>
+            <div class="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12">
+                <!-- The content is injected by JS into #sk-block -->
+                <!-- We need a container for it. The original used .skills-block -->
+                <!-- JS targets 'sk-block' innerHTML. -->
+                <div class="skills-block reveal rd3">
+                    <div id="sk-block"></div>
+                </div>
             </div>
         </section>
 
         <section id="projects">
-            <div class="s-tag reveal">Work</div>
-            <h2 class="s-title reveal rd1">MY LATEST<br><span class="dim">WORK</span></h2>
-            <p class="section-desc reveal rd2">These projects represent my hands-on learning and practical experience in
-                web development, showcasing full-stack applications built with modern tools and technologies.</p>
-            <div id="proj-list" class="proj-list"></div>
+            <div class="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12">
+                <div class="s-tag reveal">Work</div>
+                <h2 class="s-title reveal rd1">MY LATEST<br><span class="dim">WORK</span></h2>
+                <p class="section-desc reveal rd2">These projects represent my hands-on learning and practical
+                    experience in
+                    web development, showcasing full-stack applications built with modern tools and technologies.</p>
+                <div id="proj-list" class="proj-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
         </section>
 
         <section id="experience">
-            <div class="s-tag reveal">Career</div>
-            <h2 class="s-title reveal rd1">EXPERIENCE<br><span class="dim">&amp;
-                    INTERNSHIPS</span></h2>
-            <div id="exp-list" class="exp-list"></div>
+            <div class="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12">
+                <div class="s-tag reveal">Career</div>
+                <h2 class="s-title reveal rd1">EXPERIENCE<br><span class="dim">&amp;
+                        INTERNSHIPS</span></h2>
+                <div id="exp-list" class="exp-list"></div>
+            </div>
         </section>
 
-        <section id="contact">
-            <div class="reveal">
-                <div class="s-tag">Contact</div>
-                <h2 class="s-title" style="margin-bottom:20px">LET'S<br><span class="dim">BUILD</span><br>TOGETHER</h2>
-                <p class="c-tagline">Have a project in mind or want to collaborate? I reply within 24 hours.</p>
-                <div class="c-det">
-                    <div class="c-icon"><svg viewBox="0 0 24 24">
-                            <path
-                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                        </svg></div><a href="mailto:chandru2k03@gmail.com">chandru2k03@gmail.com</a>
+        <section id="contact" class="py-16 md:py-20 px-4 sm:px-6 md:px-12 overflow-x-hidden">
+            <div class="w-full max-w-2xl mx-auto text-center reveal-hidden space-y-8">
+                <div class="s-tag justify-center">Contact</div>
+                <h2 class="s-title reveal rd1">
+                    LET'S<br class="hidden md:block" />
+                    <span class="dim">BUILD</span><br class="hidden md:block" />
+                    TOGETHER
+                </h2>
+                <div class="max-w-xl mx-auto space-y-4">
+                    <p class="c-tagline">Have a project in mind or want to collaborate? I reply within 24 hours.</p>
+                    <div class="c-det justify-center">
+                        <div class="c-icon"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg></div><a href="mailto:chandru2k03@gmail.com">chandru2k03@gmail.com</a>
+                    </div>
+                    <div class="c-det justify-center">
+                        <div class="c-icon"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg></div><span>Chennai, Tamil Nadu, India &#127470; &#127475;</span>
+                    </div>
+                    <div class="c-soc flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                        <a href="https://github.com/S-Chandru-web" target="_blank"
+                            class="c-soc-btn w-full sm:w-auto h-12 flex items-center justify-center">GitHub</a>
+                        <a href="https://www.linkedin.com/in/chandru-s-a2530b270" target="_blank"
+                            class="c-soc-btn w-full sm:w-auto h-12 flex items-center justify-center">LinkedIn</a>
+                    </div>
                 </div>
-                <div class="c-det">
-                    <div class="c-icon"><svg viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                        </svg></div><span>Chennai, Tamil Nadu, India &#127470;
-                        &#127475;
-                    </span>
-                </div>
-                <div class="c-soc"><a href="https://github.com/S-Chandru-web" target="_blank"
-                        class="c-soc-btn">GitHub</a><a href="https://www.linkedin.com/in/chandru-s-a2530b270"
-                        target="_blank" class="c-soc-btn">LinkedIn</a></div>
+
+                <form class="c-form space-y-6 pt-6 mx-auto" id="cf" action="https://formsubmit.co/chandru2k03@gmail.com"
+                    method="POST">
+                    <input type="hidden" name="_subject" value="New Portfolio Message!" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="table" />
+                    <input type="hidden" name="_next" value="https://chandru-portfolio.netlify.app/" />
+                    <div class="f-row grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="ff"><label for="fn">Name</label><input id="fn" type="text" name="name" class="h-12"
+                                placeholder="Enter your name" required /></div>
+                        <div class="ff"><label for="fe">Email</label><input id="fe" type="email" name="email"
+                                class="h-12" placeholder="Enter your email" required /></div>
+                    </div>
+                    <div class="ff"><label for="fs">Subject</label><input id="fs" type="text" name="subject"
+                            class="h-12" placeholder="Enter your subject" /></div>
+                    <div class="ff"><label for="fm">Message</label><textarea id="fm" name="message" rows="6"
+                            class="min-h-[140px] md:min-h-[160px]" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="f-submit w-full sm:w-auto h-12 justify-center" id="submit-btn">
+                            Send Message <svg width="14" height="14" fill="none" stroke="currentColor"
+                                stroke-width="2.5" viewBox="0 0 24 24">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                            </svg></button>
+                    </div>
+                </form>
             </div>
-            <form class="c-form reveal rd2" id="cf" action="https://formsubmit.co/chandru2k03@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="New Portfolio Message!" /><input type="hidden"
-                    name="_captcha" value="false" /><input type="hidden" name="_template" value="table" /><input
-                    type="hidden" name="_next" value="https://chandru-portfolio.netlify.app/" />
-                <div class="f-row">
-                    <div class="ff"><label for="fn">Name</label><input id="fn" type="text" name="name"
-                            placeholder="Enter your name" required /></div>
-                    <div class="ff"><label for="fe">Email</label><input id="fe" type="email" name="email"
-                            placeholder="Enter your email" required /></div>
-                </div>
-                <div class="ff"><label for="fs">Subject</label><input id="fs" type="text" name="subject"
-                        placeholder="Enter your subject" /></div>
-                <div class="ff"><label for="fm">Message</label><textarea id="fm" name="message" rows="6"
-                        placeholder="Enter your message" required></textarea></div><button type="submit"
-                    class="f-submit" id="submit-btn">Send Message <svg width="14" height="14" fill="none"
-                        stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-                    </svg></button>
-            </form>
         </section>
         <footer>
             <div class="f-logo">CS<span>.</span></div>
